@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <h3> Your stocks</h3>
+    <br>
+
+    <table class="table table-success table-striped" style="width:70%; align-items:center";>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Company Name</th>
+                <th>Current Price</th>
+                <th>Amount</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in stocks %}
+                <tr>
+                    <td>{{ stocks["symbol"] }}</td>
+                    <td>{{ stocks["name"] }}</td>
+                    <td>{{ stocks["pricee"] }}</td>
+                    <td>{{ stocks["amount"] }}</td>
+                    <td>{{ stocks["amount"] * stocks["price"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total value</td>
+                <td>{{ totalValue }}</td>
+            </tr>
+        </tfoot>
+    </table>
+    <h4> Current cash: {{ cash }}</h4>
+    <br>
+    <form>
+        <form action="/" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="cashAdd" name="cashAdd" placeholder="Add amount" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Add Cash</button>
+        </form>
+    </form>
+{% endblock %}

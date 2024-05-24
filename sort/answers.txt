@@ -1,0 +1,28 @@
+sort1 uses: Bubble
+
+How do you know?: It is slower on random and reversed since it's running the whole thing and switching multiple times, but super fast on the already sorted array since it's not switching anything
+
+sort2 uses: Merge
+
+How do you know?: On worst case and best case it behaves basically the same and is faster than both sort1 and sort3
+
+sort3 uses: Selection
+
+How do you know?: It's the slowest on all occasions even when the array is already sorted.
+
+
+
+sort1 random50000 = 7.931s
+sort1 reversed50000 = 5.924s
+sort1 sorted50000 = 0.898s
+sort1 is BUBBLE
+
+sort2 random50000 = 1.140s
+sort2 reversed50000 = 0.863s
+sort2 sorted50000 = 0.872s
+sort2 is MERGE
+
+sort3 random50000 = 3.621s
+sort3 reversed50000 = 4.000s
+sort3 sorted50000 = 3.500s
+sort3 is SELECTION

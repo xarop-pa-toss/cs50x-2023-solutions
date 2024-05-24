@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <h4> A single share of {{ iexDict.name }} costs {{ usdFormat(iexDict.price) }}. </h4>
+{% endblock %}

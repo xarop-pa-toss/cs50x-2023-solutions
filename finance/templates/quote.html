@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <h3>Get quote</h3>
+    <br>
+    <form action="/quote" method="post" style="display:inline-block">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="symbol" name="symbol" placeholder="Symbol" type="text" style="display:inline-block;">
+            <button class="btn btn-primary" type="submit" style="display:inline-block;">Get quote</button>
+        </div>
+    </form>
+{% endblock %}

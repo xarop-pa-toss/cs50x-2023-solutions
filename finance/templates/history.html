@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transaction History
+{% endblock %}
+
+{% block main %}
+    <h3> Your stocks</h3>
+    <br>
+
+    <table class="table table-success table-striped" style="width:70%; align-items;: center";>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Company Name</th>
+                <th>Purchase Price</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in stocks %}
+                <tr>
+                    <td>{{ stocks["symbol"] }}</td>
+                    <td>{{ stocks["name"] }}</td>
+                    <td>{{ stocks["price"] }}</td>
+                    <td>{{ stocks["amount"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

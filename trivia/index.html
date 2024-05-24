@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // On correct answer
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function() {
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector('#part1Answer').innerHTML = 'Correct!';
+                });
+
+                // On wrong answer. Must loop through array returned by querySelectorAll
+                let incorrect = document.querySelectorAll('.incorrect');
+                for (let i = 0; i < incorrect.length; i++) {
+                    incorrect[i].addEventListener('click', function() {
+                        incorrect[i].style.backgroundColor = 'red';
+                        document.querySelector('#part1Answer').innerHTML = 'Incorrect!';
+                    });
+                }
+
+                // Part 2
+                document.querySelector('#check').addEventListener('click', function() {
+                    let input = document.querySelector('#inputFree');
+                    if (input.value === 'Japan')
+                    {
+                        input.style.backgroundColor = 'green';
+                        document.querySelector('#part2Answer').innerHTML = 'Correct!';
+                    } else {
+                        input.style.backgroundColor = 'red';
+                        document.querySelector('#part2Answer').innerHTML = 'Incorrect!';
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice</h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What plant is the spirit Sake made of?</h3>
+                <button class="incorrect">Leek</button>
+                <button class="incorrect">Potato</button>
+                <button class="correct">Rice</button>
+                <button class="incorrect">Turnip</button>
+
+                <p id="part1Answer"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>What is the country of origin of Sake?</h3>
+                <input id="inputFree" type="text"></input>
+                <button id="check">Check Answer</button>
+
+                <p id="part2Answer"></p>
+
+            </div>
+        </div>
+    </body>
+</html>
